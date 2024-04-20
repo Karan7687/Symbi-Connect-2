@@ -122,6 +122,7 @@ header {
 .profile_link span {
   margin-bottom: 3px;
 }
+
 .circle_icon {
   position: relative;
   height: 40px;
@@ -130,7 +131,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 8px;
   background: var(--bg-third);
   cursor: pointer;
 }
@@ -143,4 +143,28 @@ header {
   padding: 1px 6px;
   font-size: 13px;
   color: #fff;
+}
+.all_menu {
+  align-items: center;
+}
+.center-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all_right_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-third);
+  cursor: pointer;
+  /* Adjusted width and height */
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.all_right_item {
+  padding-top: 100px;
+  padding-left: 1100px;
 }

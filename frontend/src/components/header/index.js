@@ -9,12 +9,11 @@ import {
   Search,
   Watch,
 } from "../../svg";
-import {useSelector} from 'react-redux';
-
+import { useSelector } from "react-redux";
 
 export default function Header() {
-const {user}=useSelector((user)=>({...user}));
-console.log(user);
+  const { user } = useSelector((user) => ({ ...user }));
+  console.log(user);
 
   const color = "#65676b";
   return (
@@ -37,7 +36,7 @@ console.log(user);
           <Link to="/" className="middle_icon active">
             <HomeActive />
           </Link>
-          <Link to="/" className="middle_icon hover1">
+          <Link to="/Qna" className="middle_icon hover1">
             <Friends color={color} />
           </Link>
 
@@ -50,15 +49,12 @@ console.log(user);
         </div>
       </div>
 
-    <div className="header_right">
-      <Link to="/profile" className="profile_link hover1">
-
-      <img src={user?.picture} alt="not found"/>
-    <span>{user?.first_name}</span>
-      </Link>
-
-    </div>
-
+      <div className="header_right">
+        <Link to="/profile" className="profile_link hover1">
+          <img src={user?.picture} alt="not found" />
+          <span>{user?.first_name}</span>
+        </Link>
+      </div>
     </header>
   );
 }
