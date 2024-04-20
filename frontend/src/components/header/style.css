@@ -162,9 +162,37 @@ header {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  border: 2px solid black;
 }
 
 .all_right_item {
   padding-top: 100px;
   padding-left: 1100px;
+}
+
+/*-----------Responsiveness ------------*/
+
+@media (max-width: 1295px) {
+  .middle_icon {
+    width: 90px;
+  }
+}
+@media (max-width: 1130px) {
+  .middle_icon {
+    width: 70px;
+  }
+}
+
+@media (max-width: 1021px) {
+  .middle_icon {
+    width: 25px;
+  }
+}
+
+.active_header {
+  background: var(--light-blue-color);
+}
+
+.active_header svg {
+  fill: var(--blue-color);
 }

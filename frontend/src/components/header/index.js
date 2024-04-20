@@ -24,7 +24,7 @@ export default function Header() {
             <Logo />{" "}
           </div>
         </Link>
-        <div className="search search1">
+        <div className="search search1 ">
           <Search color={color} />
           <input
             type="text"
@@ -36,14 +36,14 @@ export default function Header() {
           <Link to="/" className="middle_icon active">
             <HomeActive />
           </Link>
-          <Link to="/Qna" className="middle_icon hover1">
+          <Link to="/Qna" className="middle_icon hover1 ">
             <Friends color={color} />
           </Link>
 
-          <Link to="/" className="middle_icon hover1">
+          <Link to="/" className="middle_icon hover1 ">
             <Market color={color} />
           </Link>
-          <Link to="/" className="middle_icon hover1">
+          <Link to="/" className="middle_icon hover1 ">
             <Gaming color={color} />
           </Link>
         </div>
