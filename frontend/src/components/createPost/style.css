@@ -1,0 +1,70 @@
+.createPost {
+  background: var(--bg-primary);
+
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 3px var(--shadow-3);
+  margin-top: 1.1rem;
+  width: 22%;
+  cursor: pointer;
+  display: flex;
+  align-items: right;
+}
+
+.createPost_header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 10px 10px;
+}
+
+.createPost_header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: right;
+}
+.open_post {
+  background: var(--bg-third);
+  color: var(--color-secondary);
+  height: 41px;
+  flex: 1;
+  border-radius: 10px;
+  font-size: 19px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 9px;
+  margin-left: 10px;
+}
+.create_splitter {
+  height: 1px;
+  width: 95%;
+  background: var(--bg-third);
+  margin: 7px 10px;
+}
+.createPost_body {
+  padding: 0 10px 8px 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.createPost_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 7px;
+  color: var(--color-secondary);
+  border-radius: 10px;
+  font-size: 18px;
+}
+.container {
+  display: flex;
+  justify-content: right; /* Centers horizontally */
+  align-items: right; /* Centers vertically */
+  padding-right: 20px;
+  /* Adjust as needed */
+}

@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Qna from "./components/qna";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
 import { NotLoggedInRoutes } from "./routes/NotLoggedInRoutes";
+import CreatePostPopup from "./components/createPostPopup";
 function App() {
   return (
     <div>
@@ -18,7 +19,9 @@ function App() {
           <Route path="/login" element={<Login />} exact />
         </Route>
         <Route path="/qna" element={<Qna />} exact />
+        <Route path="/login" element={<Login />} exact />
       </Routes>
+     
     </div>
   );
 }

@@ -158,7 +158,7 @@ header {
   justify-content: center;
   background: var(--bg-third);
   cursor: pointer;
-  /* Adjusted width and height */
+  /* Adjusted width and height */ 
   height: 60px;
   width: 60px;
   border-radius: 50%;
