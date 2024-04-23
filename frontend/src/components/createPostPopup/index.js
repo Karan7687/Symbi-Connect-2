@@ -66,7 +66,7 @@ export default function CreatePostPopup() {
             }}
           ></i>
         </div>
-        <button className="post_submit">Submit</button>
+        <button className="post_submit">POST</button>
       </div>
     </div>
   );
