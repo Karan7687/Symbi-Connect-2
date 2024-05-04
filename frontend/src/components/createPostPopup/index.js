@@ -1,16 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import { useRef, useEffect } from "react";
 import "./style.css";
 import Picker from "emoji-picker-react";
-export default function CreatePostPopup({ background, setBackground }) {
-  const [text, setText] = useState("");
 
-  const [showPrev, setShowPrev] = useState(false);
+export default function CreatePostPopup({
+  background,
+  setBackground,
+  onClose,
+}) {
+  const [text, setText] = useState("");
   const [picker, setPicker] = useState(false);
   const [showBgs, setShowBgs] = useState(false);
 
   const textRef = useRef(null);
   const bgRef = useRef(null);
   const [cursorPosition, setCursorPosition] = useState();
+
   useEffect(() => {
     textRef.current.selectionEnd = cursorPosition;
   }, [cursorPosition]);
@@ -24,6 +29,7 @@ export default function CreatePostPopup({ background, setBackground }) {
     setText(newText);
     setCursorPosition(start.length + emoji.length);
   };
+
   const postBackgrounds = [
     "../../../images/postbackgrounds/1.jpg",
     "../../../images/postbackgrounds/2.jpg",
@@ -36,11 +42,12 @@ export default function CreatePostPopup({ background, setBackground }) {
     "../../../images/postbackgrounds/9.jpg",
   ];
 
-  const backgroundHanlder = (i) => {
+  const backgroundHandler = (i) => {
     bgRef.current.style.backgroundImage = `url(${postBackgrounds[i]})`;
     setBackground(postBackgrounds[i]);
     bgRef.current.classList.add("bgHandler");
   };
+
   return (
     <div className="blur">
       <div className="postBox">
@@ -50,28 +57,19 @@ export default function CreatePostPopup({ background, setBackground }) {
           </div>
           <span>Any Question?</span>
         </div>
-        {/* <textarea
-          maxlength="100"
-          value={Text}
-          placeholder={`What's on your mind`}
-          className="post_input"
-          onChange={(e) => setText(e.target.value)}
-        ></textarea> */}
 
-        {!showPrev && (
-          <div className="flex_center" ref={bgRef}>
-            <textarea
-              ref={textRef}
-              maxlength="100"
-              value={text}
-              placeholder={`Type here....`}
-              className="post_input"
-              onChange={(e) => setText(e.target.value)}
-              setBackground={setBackground}
-              background={background}
-            ></textarea>
-          </div>
-        )}
+        <div className="flex_center" ref={bgRef}>
+          <textarea
+            ref={textRef}
+            maxLength="100"
+            value={text}
+            placeholder={`Type here....`}
+            className="post_input"
+            onChange={(e) => setText(e.target.value)}
+            setBackground={setBackground}
+            background={background}
+          ></textarea>
+        </div>
 
         <div className="post_emojis_wrap">
           {picker && (
@@ -95,7 +93,7 @@ export default function CreatePostPopup({ background, setBackground }) {
                   key={i}
                   alt=""
                   onClick={() => {
-                    backgroundHanlder(i);
+                    backgroundHandler(i);
                   }}
                 />
               ))}

@@ -11,13 +11,13 @@ export default function Qna() {
   const { user } = useSelector((user) => ({ ...user }));
   return (
     <div>
-      <CreatePostPopup />
+      {/* <CreatePostPopup /> */}
       <Header />
 
       {/* <Menu /> */}
       <AllMenu />
 
-      <CreatePost user={user} />
+      {/* <CreatePost user={user} /> */}
     </div>
   );
 }

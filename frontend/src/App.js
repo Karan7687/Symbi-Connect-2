@@ -21,7 +21,6 @@ function App() {
         <Route path="/qna" element={<Qna />} exact />
         <Route path="/login" element={<Login />} exact />
       </Routes>
-     
     </div>
   );
 }
