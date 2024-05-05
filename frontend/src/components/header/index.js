@@ -40,7 +40,7 @@ export default function Header() {
             <Friends color={color} />
           </Link>
 
-          <Link to="/" className="middle_icon hover1 ">
+          <Link to="/notes" className="middle_icon hover1 ">
             <Market color={color} />
           </Link>
           <Link to="/" className="middle_icon hover1 ">

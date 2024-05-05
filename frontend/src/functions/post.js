@@ -24,7 +24,7 @@ export const createPost = async (
           Authorization: `Bearer ${token}`,
         },
       }
-    );
+    );  
 
     return data;
   } catch (error) {

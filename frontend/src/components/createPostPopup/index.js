@@ -4,6 +4,8 @@ import "./style.css";
 import Picker from "emoji-picker-react";
 import { createPost } from "../../functions/post";
 
+import PulseLoader from "react-spinners/PulseLoader";
+
 export default function CreatePostPopup({ user, setVisible }) {
   const [text, setText] = useState("");
   const [picker, setPicker] = useState(false);
@@ -63,7 +65,7 @@ export default function CreatePostPopup({ user, setVisible }) {
       setLoading(false);
       setBackground("");
       setText("");
-      setVisible(false);
+     // setVisible(false);
     }
   };
   return (
@@ -71,7 +73,7 @@ export default function CreatePostPopup({ user, setVisible }) {
       <div className="postBox">
         <div className="box_header">
           <div className="small_circle">
-            <i className="exit_icon"></i>
+            <i className="exit_icon" onClick={() => setVisible(false)}></i>
           </div>
           <span>Any Question?</span>
         </div>
@@ -124,7 +126,15 @@ export default function CreatePostPopup({ user, setVisible }) {
             }}
           ></i>
         </div>
-        <button className="post_submit">POST</button>
+        <button
+          className="post_submit"
+          onClick={() => {
+            postSubmit();
+          }}
+          disabled={loading}
+        >
+          {loading ? <PulseLoader color="#fff" size={5} /> : "Post"}
+        </button>
       </div>
     </div>
   );

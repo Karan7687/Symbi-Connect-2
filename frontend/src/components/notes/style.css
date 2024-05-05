@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 80%; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.notes {
+  padding: 20px;
+  border: 1px solid black;
+  width: 100%; /* Set width to 100% to fill the container */
+  text-align: center;
+  max-width: 400px; /* Adjust the maximum width of the form */
+}
+
+.form-control {
+  border-color: black !important;
+  width: 100%;
+  max-width: 300px; /* Adjust the maximum width of form controls */
+  margin: 0 auto; /* Center form controls horizontally */
+}
