@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { useRef, useEffect } from "react";
 import "./style.css";
 import Picker from "emoji-picker-react";
+import { createPost } from "../../functions/post";
 
-export default function CreatePostPopup({
-  background,
-  setBackground,
-  onClose,
-}) {
+export default function CreatePostPopup({ user, setVisible }) {
   const [text, setText] = useState("");
   const [picker, setPicker] = useState(false);
   const [showBgs, setShowBgs] = useState(false);
+
+  const [background, setBackground] = useState("");
+
+  const [loading, setLoading] = useState(false);
 
   const textRef = useRef(null);
   const bgRef = useRef(null);
@@ -48,6 +49,23 @@ export default function CreatePostPopup({
     bgRef.current.classList.add("bgHandler");
   };
 
+  const postSubmit = async () => {
+    if (background) {
+      setLoading(true);
+      const res = await createPost(
+        null,
+        background,
+        text,
+        null,
+        user.id,
+        user.token
+      );
+      setLoading(false);
+      setBackground("");
+      setText("");
+      setVisible(false);
+    }
+  };
   return (
     <div className="blur">
       <div className="postBox">
